@@ -22,7 +22,7 @@ def naive_largest_prime_factor(num):
 def largest_prime_factor(num):
 	# Observation: if a*b=n, one factor will always be <= sqrt(n).
 	# 	So the largest prime factor will have another factor <= sqrt(n).
-	#	We can divide num by that other factor to get the prime factor.
+	#	We can divide num by that other factor to get what may be a prime factor.
 	for i in range(2, int(math.floor(math.sqrt(num)))):
 		if num % i == 0: # num can be divided and is therefore nonprime
 			return max(i, largest_prime_factor(num / i))
